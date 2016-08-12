@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RoutingUC</title>
+  <%= stylesheet_link_tag    'http://cdn.leafletjs.com/leaflet-0.3.1/leaflet.css', rel: 'stylesheet' %>
+  <%= javascript_include_tag 'http://cdn.leafletjs.com/leaflet-0.3.1/leaflet.js' %>
+  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.2&sensor=false', type:'text/javascript' %>
+  <%= javascript_include_tag 'https://raw.github.com/gist/2197042/2b90c41b39b7d5b3a851d8f256de2ebd3fe1fb74/leaflet-google.js'%>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "Home", root_path %>
+<%= yield %>
+
+</body>
+</html>

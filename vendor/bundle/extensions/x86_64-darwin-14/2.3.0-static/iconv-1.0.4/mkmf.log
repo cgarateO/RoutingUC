@@ -1,0 +1,262 @@
+have_func: checking for rb_enc_get() in ruby/encoding.h... -------------------- yes
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby/encoding.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_get; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_sys_fail_str() in ruby.h... -------------------- yes
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_sys_fail_str; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for iconv() in iconv.h... -------------------- no
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+Undefined symbols for architecture x86_64:
+  "_iconv", referenced from:
+      _t in conftest-e0be76.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))iconv; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:15:13: error: conflicting types for 'iconv'
+extern void iconv();
+            ^
+/usr/include/iconv.h:69:8: note: previous declaration is here
+size_t iconv (iconv_t /*cd*/,
+       ^
+conftest.c:16:21: error: too few arguments to function call, expected 5, have 0
+int t(void) { iconv(); return 0; }
+              ~~~~~ ^
+/usr/include/iconv.h:69:1: note: 'iconv' declared here
+size_t iconv (iconv_t /*cd*/,
+^
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: extern void iconv();
+16: int t(void) { iconv(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for iconv() in -liconv... -------------------- yes
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation -liconv  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))iconv; return !p; }
+/* end */
+
+--------------------
+
+check_signedness: checking signedness of size_t... -------------------- unsigned
+
+"clang -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe   -c conftest.c"
+conftest.c:6:20: error: 'conftest_const' declared as an array with a negative size
+int conftest_const[((rbcv_typedef_)-1 < 0) ? 1 : -1];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: typedef size_t rbcv_typedef_;
+4: 
+5: /*top*/
+6: int conftest_const[((rbcv_typedef_)-1 < 0) ? 1 : -1];
+/* end */
+
+"clang -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: typedef size_t rbcv_typedef_;
+4: 
+5: /*top*/
+6: int conftest_const[((rbcv_typedef_)-1 > 0) ? 1 : -1];
+/* end */
+
+--------------------
+
+checking for const of iconv() 2nd argument... -------------------- no
+
+clang -E -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe  conftest.c  |
+iconv (iconv_t ,
+ char ** restrict , size_t * restrict ,
+ char ** restrict , size_t * restrict );
+--------------------
+
+have_func: checking for iconvlist() in iconv.h... -------------------- yes
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib    -liconv  -lruby-static -framework CoreFoundation -liconv  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))iconvlist; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for __iconv_free_list() in iconv.h... -------------------- no
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib    -liconv  -lruby-static -framework CoreFoundation -liconv  -lpthread -ldl -lobjc "
+conftest.c:15:57: error: use of undeclared identifier '__iconv_free_list'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))__iconv_free_list; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))__iconv_free_list; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-darwin14 -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/backward -I/Users/cgarate/.rbenv/versions/2.3.1/include/ruby-2.3.0 -I. -I/Users/cgarate/.rbenv/versions/2.3.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib -L. -L/Users/cgarate/.rbenv/versions/2.3.1/lib  -fstack-protector -L/usr/local/lib    -liconv  -lruby-static -framework CoreFoundation -liconv  -lpthread -ldl -lobjc "
+Undefined symbols for architecture x86_64:
+  "___iconv_free_list", referenced from:
+      _t in conftest-334019.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <iconv.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: extern void __iconv_free_list();
+16: int t(void) { __iconv_free_list(); return 0; }
+/* end */
+
+--------------------
+

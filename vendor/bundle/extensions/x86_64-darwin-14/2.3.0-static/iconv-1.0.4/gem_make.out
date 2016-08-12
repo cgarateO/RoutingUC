@@ -1,0 +1,27 @@
+current directory: /Users/cgarate/RoutingUC/vendor/bundle/gems/iconv-1.0.4/ext/iconv
+/Users/cgarate/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160804-5234-9j166o.rb extconf.rb
+checking for rb_enc_get() in ruby/encoding.h... yes
+checking for rb_sys_fail_str() in ruby.h... yes
+checking for iconv() in iconv.h... no
+checking for iconv() in -liconv... yes
+checking signedness of size_t... unsigned
+checking for const of iconv() 2nd argument... no
+checking for iconvlist() in iconv.h... yes
+checking for __iconv_free_list() in iconv.h... no
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/cgarate/RoutingUC/vendor/bundle/extensions/x86_64-darwin-14/2.3.0-static/iconv-1.0.4/mkmf.log
+
+current directory: /Users/cgarate/RoutingUC/vendor/bundle/gems/iconv-1.0.4/ext/iconv
+make "DESTDIR=" clean
+
+current directory: /Users/cgarate/RoutingUC/vendor/bundle/gems/iconv-1.0.4/ext/iconv
+make "DESTDIR="
+compiling iconv.c
+linking shared-object iconv/iconv.bundle
+
+current directory: /Users/cgarate/RoutingUC/vendor/bundle/gems/iconv-1.0.4/ext/iconv
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 iconv.bundle ./.gem.20160804-5234-1gc4kwp/iconv
